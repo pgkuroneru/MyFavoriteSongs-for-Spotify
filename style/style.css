@@ -1,0 +1,7 @@
+img {
+    pointer-events: none;
+}
+
+.jumbotron h1 {
+    word-wrap:break-word;
+}
