@@ -2,14 +2,22 @@
 ini_set('display_errors', 0);
 require 'vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$session = new SpotifyWebAPI\Session(
-    $_ENV["SPOTIFY_CLIENT_ID"],
-    $_ENV["SPOTIFY_CLIENT_SECRET"],
-    $_ENV["SPOTIFY_REDIRECT_URL"]
-);
+$env = getenv("APP_ENV");
+if ($env === "production") {
+    $session = new SpotifyWebAPI\Session(
+        getenv("SPOTIFY_CLIENT_ID"),
+        getenv("SPOTIFY_CLIENT_SECRET"),
+        getenv("SPOTIFY_REDIRECT_URL")
+    );
+} else {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+    $session = new SpotifyWebAPI\Session(
+        $_ENV["SPOTIFY_CLIENT_ID"],
+        $_ENV["SPOTIFY_CLIENT_SECRET"],
+        $_ENV["SPOTIFY_REDIRECT_URL"]
+    );
+}
 
 $scopes = array(
     'user-top-read'
