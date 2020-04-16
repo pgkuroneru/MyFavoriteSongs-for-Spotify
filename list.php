@@ -128,9 +128,9 @@ switch ($time_range) {
                                 <p class="card-text"><?php print_r($artist_name) ?></p>
                                 <div>
                                     <a class="btn btn-primary btn-block" href="<?php print_r($app_uri) ?>"
-                                       class="card-link">Spotifyアプリ</a>
+                                       class="card-link"><img width="22px" src="images/Spotify_Icon_RGB_White.png">&nbsp;Spotifyアプリで聴く</a>
                                     <a class="btn btn-primary btn-block" href="<?php print_r($external_urls) ?>"
-                                       class="card-link">Spotify Web Player</a>
+                                       class="card-link"><img width="22px" src="images/Spotify_Icon_RGB_White.png">&nbsp;Spotify Web Playerで聴く</a>
                                 </div>
                             </div>
                         </div>

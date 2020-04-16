@@ -47,7 +47,7 @@ if (isset($_SESSION['accessToken'])) {
     <div class="row">
         <div class="col-12 mt-2 mb-5">
             <div class="login text-center">
-                <a class="btn btn-primary btn-lg" href="./callback.php">Spotifyでログイン</a>
+                <a class="btn btn-primary btn-lg" href="./callback.php">Connect Spotify</a>
             </div>
         </div>
     </div>
@@ -67,10 +67,10 @@ if (isset($_SESSION['accessToken'])) {
                                 <h5 class="card-title"><?php echo $item + 1 ?>. 曲名</h5>
                                 <p class="card-text">アーティスト名</p>
                                 <div>
-                                    <a class="btn btn-primary btn-block" href="#"
-                                       class="card-link">Spotifyアプリ</a>
-                                    <a class="btn btn-primary btn-block" href="#"
-                                       class="card-link">Spotify Web Player</a>
+                                    <a class="btn btn-primary btn-block" href="<?php print_r($app_uri) ?>"
+                                       class="card-link"><img width="22px" src="images/Spotify_Icon_RGB_White.png">&nbsp;Spotifyアプリで聴く</a>
+                                    <a class="btn btn-primary btn-block" href="<?php print_r($external_urls) ?>"
+                                       class="card-link"><img width="22px" src="images/Spotify_Icon_RGB_White.png">&nbsp;Spotify Web Playerで聴く</a>
                                 </div>
                             </div>
                         </div>

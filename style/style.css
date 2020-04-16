@@ -5,3 +5,8 @@ img {
 .jumbotron h1 {
     word-wrap:break-word;
 }
+
+.card-body .btn-primary {
+    background-color: #1DB954;
+    border-color: #1DB954;
+}
